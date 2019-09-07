@@ -1,1 +1,1 @@
-web:    ./build/install/app/bin/app
+web:    .bin/com/tuyano/web/MyServlet
