@@ -1,7 +1,7 @@
 apply plugin: 'application'
 
-sourceCompatibility = '1.7'
-targetCompatibility = '1.7'
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
 
 mainClassName = 'Main'
 applicationName = 'app'
@@ -17,6 +17,7 @@ dependencies {
 }
 
 task stage(dependsOn: ['clean', 'installApp'])
+stage.finalizedBy build
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.1'
