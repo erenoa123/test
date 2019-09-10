@@ -1,1 +1,1 @@
-web: war target/*.war
+web: war --war target/gradle-web-app.war --app gradle-web-app
