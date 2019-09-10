@@ -1,1 +1,1 @@
-web:    .bin/com/tuyano/web/MyServlet
+web: war target/*.war
