@@ -1,15 +1,15 @@
-<!-- <html> -->
-<!-- 	<head> -->
-<!-- 		<title>Sample Index</title> -->
-<!-- 	</head> -->
-<!-- 	<body> -->
-<!-- 		<h1>Hello World! kurihara!!!</h1> -->
-<%-- 		<%= new java.util.Date().toString() %> --%>
-<!-- 	</body> -->
-<!-- </html> -->
+
 <%@page contentType="text/plain; charset=Windows-31J"%>
 <%@page import="com.tuyano.web.ConnectionManager, java.sql.*"%>
 <%@page import="com.tuyano.web.ConnectionManager, java.net.*"%>
+<html>
+	<head>
+		<title>Sample Index</title>
+	</head>
+	<body>
+		<h1>Hello World! kurihara!!!</h1>
+		<%= new java.util.Date().toString() %>
+
 <%
 try{
 	Connection con = ConnectionManager.getConnection();
@@ -27,3 +27,5 @@ try{
 	e1.printStackTrace();
 }
 %>
+	</body>
+</html>
