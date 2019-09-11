@@ -17,6 +17,7 @@ dependencies {
 	compile group:'javax.servlet', name:'javax.servlet-api', version:'3.1.0'
 	compile 'postgresql:postgresql:9.0-801.jdbc4'
 	compile 'org.eclipse.jetty:jetty-servlet:7.6.0.v20120127'
+	providedCompile group: 'javax.enterprise', name: 'cdi-api', version: '2.0'
 	providedCompile ('org.eclipse.jetty:jetty-runner:9.2.0.v20140526') {
         exclude module : 'javax.servlet-api'
     }
