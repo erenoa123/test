@@ -10,19 +10,19 @@
 		<%= new java.util.Date().toString() %><br>
 
 		<%
-		String dataDate[] = null;
+		String dataDate[] =  null;
 		int dataFCnt[] =null;
 		int dataSCnt[] =null;
 		try{
 			Connection con = ConnectionManager.getConnection();
 			Statement smt = con.createStatement();
 			ResultSet rs = smt.executeQuery("select * from kintore");
-			int i =0;
+			int j =0;
 			while(rs.next()) {
-				dataDate[i] = rs.getString("date");
-				dataFCnt[i] = rs.getInt("fcnt");
-				dataSCnt[i] = rs.getInt("scnt");
-				i++;
+				dataDate[j] = rs.getString("date");
+				dataFCnt[j] = rs.getInt("fcnt");
+				dataSCnt[j] = rs.getInt("scnt");
+				j++;
 			}
 			smt.close();
 			con.close();
