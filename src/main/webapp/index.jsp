@@ -43,7 +43,7 @@
     	  }
     	  out.print("'"+data[i]+"'");
       }%>],
-    	  }
+
       }
       datasets: [
         {
