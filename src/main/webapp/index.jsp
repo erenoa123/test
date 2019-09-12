@@ -21,11 +21,7 @@
 			int j =0;
 			while(rs.next()) {
 				dataDate[j] = rs.getString("date");
-				dataFCnt[j] = rs.getInt("fcnt");
-				dataSCnt[j] = rs.getInt("scnt");
-				out.println(dataDate[j]);
-				out.println(dataFCnt[j]);
-				out.println(dataSCnt[j]);
+
 				j++;
 			}
 			smt.close();
