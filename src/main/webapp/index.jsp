@@ -10,10 +10,11 @@
 		<%= new java.util.Date().toString() %><br>
 
 		<%
-		String dataDate[] =  null;
-		int dataFCnt[] =null;
-		int dataSCnt[] =null;
+
 		try{
+			String dataDate[] =  null;
+			int dataFCnt[] =null;
+			int dataSCnt[] =null;
 			Connection con = ConnectionManager.getConnection();
 			Statement smt = con.createStatement();
 			ResultSet rs = smt.executeQuery("select * from kintore");
