@@ -21,7 +21,7 @@
 			int j =0;
 			while(rs.next()) {
 				dataDate[j] = rs.getString("date");
-				out.println(dataDate[j]);
+				out.println(dataDate[0]);
 				j++;
 			}
 			smt.close();
