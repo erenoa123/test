@@ -49,12 +49,16 @@
     	  }
     	  out.print("'"+dataDate[i]+"'");
       }%>];
-  var jsdataFCnt = [<% for( int i =0; i < 11;i++){
+  var jsdataFCnt1 = [<% for( int i =0; i < 11;i++){
   	  if( i != 0){
   		  out.print(",");
   	  }
   	  out.print(dataFCnt[i]);
     }%>];
+  var jsdataFCnt = [];
+  for (var row in jsdataFCnt1) {
+    jsdataFCnt.push(dataFCnt1[row])
+  };
   var jsdataSCnt = [<% for( int i =0; i < 11;i++){
   	  if( i != 0){
   		  out.print(",");
@@ -64,18 +68,18 @@
   var myLineChart = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: jsdataDate.slice(11),
+      labels: jsdataDate,
 
       datasets: [
         {
           label: '腹筋',
-          data: jsdataFCnt.slice(11),
+          data: jsdataFCnt,
           borderColor: "rgba(255,0,0,1)",
           backgroundColor: "rgba(0,0,0,0)"
         },
         {
           label: 'スクワット',
-          data: jsdataSCnt.slice(11),
+          data: [25, 27, 27, 25, 26, 27, 25, 21],
           borderColor: "rgba(0,0,255,1)",
           backgroundColor: "rgba(0,0,0,0)"
         }
