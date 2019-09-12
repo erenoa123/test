@@ -50,13 +50,13 @@
   	  if( i != 0){
   		  out.print(",");
   	  }
-  	  out.print("'"+dataFCnt[i]+"'");
+  	  out.print(dataFCnt[i]);
     }%>];
   var jsdataSCnt = [<% for( int i =0; i < dataSCnt.length;i++){
   	  if( i != 0){
   		  out.print(",");
   	  }
-  	  out.print("'"+dataSCnt[i]+"'");
+  	  out.print(dataSCnt[i]);
     }%>];
   var myLineChart = new Chart(ctx, {
     type: 'line',
