@@ -49,7 +49,18 @@
     	  }
     	  out.print("'"+dataDate[i]+"'");
       }%>];
-
+  var jsdataFCnt = [<% for( int i =0; i < 11;i++){
+  	  if( i != 0){
+  		  out.print(",");
+  	  }
+  	  out.print(dataFCnt[i]);
+    }%>];
+  var jsdataSCnt = [<% for( int i =0; i < 11;i++){
+  	  if( i != 0){
+  		  out.print(",");
+  	  }
+  	  out.print(dataSCnt[i]);
+    }%>];
   var myLineChart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -58,13 +69,13 @@
       datasets: [
         {
           label: '腹筋',
-          data: [35, 34, 37, 35, 34, 35, 34, 25],
+          data: jsdataFCnt,
           borderColor: "rgba(255,0,0,1)",
           backgroundColor: "rgba(0,0,0,0)"
         },
         {
           label: 'スクワット',
-          data: [25, 27, 27, 25, 26, 27, 25, 21],
+          data: jsdataSCnt,
           borderColor: "rgba(0,0,255,1)",
           backgroundColor: "rgba(0,0,0,0)"
         }
@@ -73,7 +84,7 @@
     options: {
       title: {
         display: true,
-        text: '筋トレ'
+        text: '筋トレ（<%out.print("'"+dataDate[0]+"'");%>~<%out.print("'"+dataDate[10]+"'");%>）'
       },
       scales: {
         yAxes: [{
