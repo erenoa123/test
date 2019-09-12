@@ -10,22 +10,18 @@
 		<%= new java.util.Date().toString() %><br>
 
 		<%
-		String dataDate[] =  {"","","","","","","","","","",""};
-		String dataFCnt[] = {"","","","","","","","","","",""};
-		String dataSCnt[] = {"","","","","","","","","","",""};
+		String dataDate[] =  null;
+		int dataFCnt[] =null;
+		int dataSCnt[] =null;
 		try{
-
 			Connection con = ConnectionManager.getConnection();
 			Statement smt = con.createStatement();
 			ResultSet rs = smt.executeQuery("select * from kintore");
 			int j =0;
 			while(rs.next()) {
 				dataDate[j] = rs.getString("date");
-				dataFCnt[j] = rs.getString("fcnt");
-				dataSCnt[j] = rs.getString("scnt");
-				out.println(dataDate[j]);
-				out.println(dataFCnt[j]);
-				out.println(dataSCnt[j]);
+				dataFCnt[j] = rs.getInt("fcnt");
+				dataSCnt[j] = rs.getInt("scnt");
 				j++;
 			}
 			smt.close();
@@ -37,19 +33,31 @@
 		}
 		%>
 
+
 	<canvas id="myLineChart"></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 
   <script>
 
   var ctx = document.getElementById("myLineChart");
-  var jsdataDate = [<% for( int i =0; i < 11;i++){
+  var jsdataDate = [<% for( int i =0; i < dataDate.length;i++){
     	  if( i != 0){
     		  out.print(",");
     	  }
     	  out.print("'"+dataDate[i]+"'");
       }%>];
-
+  int jsdataFCnt = [<% for( int i =0; i < dataFCnt.length;i++){
+  	  if( i != 0){
+  		  out.print(",");
+  	  }
+  	  out.print(dataFCnt[i]);
+    }%>];
+  int jsdataSCnt = [<% for( int i =0; i < dataSCnt.length;i++){
+  	  if( i != 0){
+  		  out.print(",");
+  	  }
+  	  out.print(dataSCnt[i]);
+    }%>];
   var myLineChart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -58,13 +66,13 @@
       datasets: [
         {
           label: '腹筋',
-          data: [35, 34, 37, 35, 34, 35, 34, 25],
+          data: jsdataFCnt,
           borderColor: "rgba(255,0,0,1)",
           backgroundColor: "rgba(0,0,0,0)"
         },
         {
           label: 'スクワット',
-          data: [25, 27, 27, 25, 26, 27, 25, 21],
+          data: jsdataSCnt,
           borderColor: "rgba(0,0,255,1)",
           backgroundColor: "rgba(0,0,0,0)"
         }
@@ -73,7 +81,7 @@
     options: {
       title: {
         display: true,
-        text: '筋トレ'
+        text: '筋トレ（<%out.print("'"+dataDate[0]+"'");%>~<%out.print("'"+dataDate[dataDate.length]+"'");%>）'
       },
       scales: {
         yAxes: [{
@@ -90,6 +98,5 @@
     }
   });
   </script>
-
 	</body>
 </html>
