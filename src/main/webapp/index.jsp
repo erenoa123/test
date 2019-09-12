@@ -64,18 +64,18 @@
   var myLineChart = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: jsdataDate,
+      labels: jsdataDate.slice(11),
 
       datasets: [
         {
           label: '腹筋',
-          data: jsdataFCnt,
+          data: jsdataFCnt.slice(11),
           borderColor: "rgba(255,0,0,1)",
           backgroundColor: "rgba(0,0,0,0)"
         },
         {
           label: 'スクワット',
-          data: jsdataSCnt,
+          data: jsdataSCnt.slice(11),
           borderColor: "rgba(0,0,255,1)",
           backgroundColor: "rgba(0,0,0,0)"
         }
