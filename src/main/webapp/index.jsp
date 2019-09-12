@@ -34,17 +34,17 @@
   <script>
 
   var ctx = document.getElementById("myLineChart");
-  var myLineChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: [<% for( int i =0; i < data.length;i++){
+  var jsdata = [<% for( int i =0; i < data.length;i++){
     	  if( i != 0){
     		  out.print(",");
     	  }
     	  out.print("'"+data[i]+"'");
-      }%>],
+      }%>];
+  var myLineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: jsdata,
 
-      }
       datasets: [
         {
           label: 'Å‚‹C‰·(“xj',
