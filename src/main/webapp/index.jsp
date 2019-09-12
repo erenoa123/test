@@ -46,13 +46,13 @@
     	  }
     	  out.print("'"+dataDate[i]+"'");
       }%>];
-  var jsdataFCnt = [<% for( int i =0; i < dataFCnt.length;i++){
+  int jsdataFCnt = [<% for( int i =0; i < dataFCnt.length;i++){
   	  if( i != 0){
   		  out.print(",");
   	  }
   	  out.print(dataFCnt[i]);
     }%>];
-  var jsdataSCnt = [<% for( int i =0; i < dataSCnt.length;i++){
+  int jsdataSCnt = [<% for( int i =0; i < dataSCnt.length;i++){
   	  if( i != 0){
   		  out.print(",");
   	  }
