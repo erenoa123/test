@@ -16,13 +16,11 @@
 		try{
 			Connection con = ConnectionManager.getConnection();
 			Statement smt = con.createStatement();
-			ResultSet rs = smt.executeQuery("select * from kintore");
+			ResultSet rs = smt.executeQuery("select * from shop");
 			int j =0;
 			while(rs.next()) {
-				dataDate[j] = rs.getString("date");
-				dataFCnt[j] = rs.getInt("fcnt");
-				dataSCnt[j] = rs.getInt("scnt");
-				j++;
+				String s = "date=" + rs.getString("date");
+				out.println(s);
 			}
 			smt.close();
 			con.close();
@@ -32,7 +30,6 @@
 			e1.printStackTrace();
 		}
 		%>
-
 
 
 	</body>
