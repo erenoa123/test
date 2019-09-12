@@ -26,7 +26,7 @@
 			e1.printStackTrace();
 		}
 		%>
-		<% String[] data = {"test", "8ŒŽ2“ú", "8ŒŽ3“ú", "8ŒŽ4“ú", "8ŒŽ5“ú", "8ŒŽ6“ú", "8ŒŽ7“ú"}; %>
+		<% String[] data = {"6ŒŽ22“ú", "8ŒŽ2“ú", "8ŒŽ3“ú", "8ŒŽ4“ú", "8ŒŽ5“ú", "8ŒŽ6“ú", "8ŒŽ7“ú"}; %>
 
 	<canvas id="myLineChart"></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
