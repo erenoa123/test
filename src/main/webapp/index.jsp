@@ -22,6 +22,7 @@
 				dataDate[i] = rs.getString("date");
 				dataFCnt[i] = rs.getInt("fcnt");
 				dataSCnt[i] = rs.getInt("scnt");
+				i++;
 			}
 			smt.close();
 			con.close();
