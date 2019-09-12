@@ -11,8 +11,8 @@
 
 		<%
 		String dataDate[] =  {"","","","","","","","","","",""};
-		int dataFCnt[] ={0,0,0,0,0,0,0,0,0,0,0};
-		int dataSCnt[] ={0,0,0,0,0,0,0,0,0,0,0};
+		String dataFCnt[] = {"","","","","","","","","","",""};
+		String dataSCnt[] = {"","","","","","","","","","",""};
 		try{
 
 			Connection con = ConnectionManager.getConnection();
@@ -21,8 +21,8 @@
 			int j =0;
 			while(rs.next()) {
 				dataDate[j] = rs.getString("date");
-				dataFCnt[j] = rs.getInt("fcnt");
-				dataSCnt[j] = rs.getInt("scnt");
+				dataFCnt[j] = rs.getString("fcnt");
+				dataSCnt[j] = rs.getString("scnt");
 				out.println(dataDate[j]);
 				out.println(dataFCnt[j]);
 				out.println(dataSCnt[j]);
