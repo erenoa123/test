@@ -19,8 +19,9 @@
 			ResultSet rs = smt.executeQuery("select * from kintore");
 			int j =0;
 			while(rs.next()) {
-				String s = "date=" + rs.getString("date");
-				out.println(s);
+				dataDate[j] = rs.getString("date");
+				out.println(dataDate[j]);
+				j++;
 			}
 			smt.close();
 			con.close();
