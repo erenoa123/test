@@ -30,12 +30,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 
   <script>
-  var date = new java.util.Date().toString()
+
   var ctx = document.getElementById("myLineChart");
   var myLineChart = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: [date, '8Œ2“ú', '8Œ3“ú', '8Œ4“ú', '8Œ5“ú', '8Œ6“ú', '8Œ7“ú'],
+      labels: ['test', '8Œ2“ú', '8Œ3“ú', '8Œ4“ú', '8Œ5“ú', '8Œ6“ú', '8Œ7“ú'],
       datasets: [
         {
           label: 'Å‚‹C‰·(“xj',
