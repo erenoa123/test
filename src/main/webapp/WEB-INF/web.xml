@@ -7,19 +7,11 @@
 	<display-name>Web Application</display-name>
 
 	<servlet>
-		<servlet-name>sample</servlet-name>
+		<servlet-name>serv</servlet-name>
 		<servlet-class>com.tuyano.web.MyServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>sample</servlet-name>
-		<url-pattern>/sample</url-pattern>
-	</servlet-mapping>
-	<servlet>
-		<servlet-name>Faces Servlet</servlet-name>
-		<servlet-class>com.tuyano.web.MeiboBean</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Faces Servlet</servlet-name>
-		<url-pattern>/faces/*</url-pattern>
+		<servlet-name>serv</servlet-name>
+		<url-pattern>/serv</url-pattern>
 	</servlet-mapping>
 </web-app>
