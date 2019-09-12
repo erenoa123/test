@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<%@page contentType="text/html; charset=Windows-31J"%>
+<%@page import="com.tuyano.web.ConnectionManager, java.sql.*"%>
+<%@page import="com.tuyano.web.ConnectionManager, java.net.*"%>
 <html>
 	<head>
 		<title>Sample Index</title>
 
-<%@page contentType="text/plain; charset=Windows-31J"%>
-<%@page import="com.tuyano.web.ConnectionManager, java.sql.*"%>
-<%@page import="com.tuyano.web.ConnectionManager, java.net.*"%>
+
 	</head>
 	<body>
 		<h1>Hello World! kurihara!!!</h1>
