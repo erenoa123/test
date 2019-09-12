@@ -10,13 +10,18 @@
 		<%= new java.util.Date().toString() %><br>
 
 		<%
+		String dataDate[] = null;
+		int dataFCnt[] =null;
+		int dataSCnt[] =null;
 		try{
 			Connection con = ConnectionManager.getConnection();
 			Statement smt = con.createStatement();
-			ResultSet rs = smt.executeQuery("select * from shop");
+			ResultSet rs = smt.executeQuery("select * from kintore");
+			int i =0;
 			while(rs.next()) {
-				String s = "id=" + rs.getInt("num")+",name="+rs.getString("name");
-				out.println(s);
+				dataDate[i] = rs.getString("date");
+				dataFCnt[i] = rs.getInt("fcnt");
+				dataSCnt[i] = rs.getInt("scnt");
 			}
 			smt.close();
 			con.close();
@@ -26,7 +31,7 @@
 			e1.printStackTrace();
 		}
 		%>
-		<% String[] data = {"6月22日", "8月2日", "8月3日", "8月4日", "8月5日", "8月6日", "8月7日"}; %>
+
 
 	<canvas id="myLineChart"></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
@@ -34,27 +39,39 @@
   <script>
 
   var ctx = document.getElementById("myLineChart");
-  var jsdata = [<% for( int i =0; i < data.length;i++){
+  var jsdataDate = [<% for( int i =0; i < dataDate.length;i++){
     	  if( i != 0){
     		  out.print(",");
     	  }
-    	  out.print("'"+data[i]+"'");
+    	  out.print("'"+dataDate[i]+"'");
       }%>];
+  var jsdataFCnt = [<% for( int i =0; i < dataFCnt.length;i++){
+  	  if( i != 0){
+  		  out.print(",");
+  	  }
+  	  out.print("'"+dataFCnt[i]+"'");
+    }%>];
+  var jsdataSCnt = [<% for( int i =0; i < dataSCnt.length;i++){
+  	  if( i != 0){
+  		  out.print(",");
+  	  }
+  	  out.print("'"+dataSCnt[i]+"'");
+    }%>];
   var myLineChart = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: jsdata,
+      labels: jsdataDate,
 
       datasets: [
         {
-          label: '最高気温(度）',
-          data: [35, 34, 37, 35, 34, 35, 34, 25],
+          label: '腹筋',
+          data: jsdataFCnt,
           borderColor: "rgba(255,0,0,1)",
           backgroundColor: "rgba(0,0,0,0)"
         },
         {
-          label: '最低気温(度）',
-          data: [25, 27, 27, 25, 26, 27, 25, 21],
+          label: 'スクワット',
+          data: jsdataSCnt,
           borderColor: "rgba(0,0,255,1)",
           backgroundColor: "rgba(0,0,0,0)"
         }
@@ -63,7 +80,7 @@
     options: {
       title: {
         display: true,
-        text: '気温（8月1日~8月7日）'
+        text: '筋トレ（<%out.print("'"+dataDate[0]+"'");%>~<%out.print("'"+dataDate[dataDate.length]+"'");%>）'
       },
       scales: {
         yAxes: [{
@@ -72,7 +89,7 @@
             suggestedMin: 0,
             stepSize: 10,
             callback: function(value, index, values){
-              return  value +  '度'
+              return  value +  '回'
             }
           }
         }]
