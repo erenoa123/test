@@ -16,7 +16,7 @@
 		try{
 			Connection con = ConnectionManager.getConnection();
 			Statement smt = con.createStatement();
-			ResultSet rs = smt.executeQuery("select * from shop");
+			ResultSet rs = smt.executeQuery("select * from kintore");
 			int j =0;
 			while(rs.next()) {
 				String s = "date=" + rs.getString("date");
