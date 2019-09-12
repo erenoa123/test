@@ -69,13 +69,13 @@
       datasets: [
         {
           label: '腹筋',
-          data: jsdataFCnt,
+          data: [35, 34, 37, 35, 34, 35, 34, 25],
           borderColor: "rgba(255,0,0,1)",
           backgroundColor: "rgba(0,0,0,0)"
         },
         {
           label: 'スクワット',
-          data: jsdataSCnt,
+          data: [25, 27, 27, 25, 26, 27, 25, 21],
           borderColor: "rgba(0,0,255,1)",
           backgroundColor: "rgba(0,0,0,0)"
         }
@@ -84,7 +84,7 @@
     options: {
       title: {
         display: true,
-        text: '筋トレ（<%out.print("'"+dataDate[0]+"'");%>~<%out.print("'"+dataDate[10]+"'");%>）'
+        text: '筋トレ'
       },
       scales: {
         yAxes: [{
