@@ -12,7 +12,7 @@
 		<%
 
 		try{
-			String dataDate[] =  null;
+			String dataDate[] =  {"","","","","","","","","","",""};
 			int dataFCnt[] =null;
 			int dataSCnt[] =null;
 			Connection con = ConnectionManager.getConnection();
