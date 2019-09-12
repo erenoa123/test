@@ -13,15 +13,19 @@
 
 		try{
 			String dataDate[] =  {"","","","","","","","","","",""};
-			int dataFCnt[] =null;
-			int dataSCnt[] =null;
+			int dataFCnt[] ={0,0,0,0,0,0,0,0,0,0,0};
+			int dataSCnt[] ={0,0,0,0,0,0,0,0,0,0,0};
 			Connection con = ConnectionManager.getConnection();
 			Statement smt = con.createStatement();
 			ResultSet rs = smt.executeQuery("select * from kintore");
 			int j =0;
 			while(rs.next()) {
 				dataDate[j] = rs.getString("date");
-				out.println(dataDate[0]);
+				dataFCnt[j] = rs.getInt("fcnt");
+				dataSCnt[j] = rs.getInt("scnt");
+				out.println(dataDate[j]);
+				out.println(dataFCnt[j]);
+				out.println(dataSCnt[j]);
 				j++;
 			}
 			smt.close();
