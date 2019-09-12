@@ -88,7 +88,7 @@
     options: {
       title: {
         display: true,
-        text: '筋トレ（<%out.print("'"+dataDate[0]+"'");%>~<%out.print("'"+dataDate[10]+"'");%>）'
+        text: '筋トレ（）'
       },
       scales: {
         yAxes: [{
