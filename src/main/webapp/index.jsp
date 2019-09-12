@@ -10,9 +10,9 @@
 		<%= new java.util.Date().toString() %><br>
 
 		<%
-		String dataDate[] =  {"","","","","","","","","","",""};
-		int dataFCnt[] ={0,0,0,0,0,0,0,0,0,0,0};
-		int dataSCnt[] ={0,0,0,0,0,0,0,0,0,0,0};
+		String dataDate[] =  {"","","","","","","","","","","",""};
+		int dataFCnt[] ={0,0,0,0,0,0,0,0,0,0,0,0};
+		int dataSCnt[] ={0,0,0,0,0,0,0,0,0,0,0,0};
 		try{
 
 			Connection con = ConnectionManager.getConnection();
