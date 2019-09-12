@@ -26,7 +26,9 @@
 			e1.printStackTrace();
 		}
 		%>
-		 <canvas id="myLineChart"></canvas>
+		<% String[] data = {"test", "8Œ2“ú", "8Œ3“ú", "8Œ4“ú", "8Œ5“ú", "8Œ6“ú", "8Œ7“ú"}; %>
+
+	<canvas id="myLineChart"></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 
   <script>
@@ -35,7 +37,14 @@
   var myLineChart = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: ['test', '8Œ2“ú', '8Œ3“ú', '8Œ4“ú', '8Œ5“ú', '8Œ6“ú', '8Œ7“ú'],
+      labels: [<% for( int i =0; i < data.length;i++){
+    	  if( i != 0){
+    		  out.print(",");
+    	  }
+    	  out.print("'"+data[i]+"'");
+      }%>],
+    	  }
+      }
       datasets: [
         {
           label: 'Å‚‹C‰·(“xj',
