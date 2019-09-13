@@ -85,7 +85,7 @@
     options: {
       title: {
         display: true,
-        text: '筋トレ（'+jsdataDate[0]+'~'+jsdataDate[11]+'）'
+        text: '筋トレ（'+jsdataDate[0]+'~'+jsdataDate[10]+'）'
       },
       scales: {
         yAxes: [{
