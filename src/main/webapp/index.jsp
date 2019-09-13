@@ -11,18 +11,18 @@
 
 		<%
 		String dataDate[] =  {"","","","","","","","","","",""};
-		String dataFCnt[] = {"","","","","","","","","","",""};
-		String dataSCnt[] = {"","","","","","","","","","",""};
+		int dataFCnt[] = {0,0,0,0,0,0,0,0,0,0,0};
+		int dataSCnt[] = {0,0,0,0,0,0,0,0,0,0,0};
 		try{
 
 			Connection con = ConnectionManager.getConnection();
 			Statement smt = con.createStatement();
-			ResultSet rs = smt.executeQuery("select * from kintore");
+			ResultSet rs = smt.executeQuery("select * from kintore2");
 			int j =0;
 			while(rs.next()) {
 				dataDate[j] = rs.getString("date");
-				dataFCnt[j] = rs.getString("fcnt");
-				dataSCnt[j] = rs.getString("scnt");
+				dataFCnt[j] = rs.getInt("fcnt");
+				dataSCnt[j] = rs.getInt("scnt");
 				out.println(dataDate[j]);
 				out.println(dataFCnt[j]);
 				out.println(dataSCnt[j]);
@@ -50,7 +50,12 @@
     	  out.print("'"+dataDate[i]+"'");
       }%>];
 
-  var jsdataFCnt = [35, 34, 37, 35, 34, 35, 34, 25];
+  var jsdataFCnt = [<% for( int i =0; i < 11;i++){
+		  if( i != 0){
+			  out.print(",");
+		  }
+		  out.print((int)dataFCnt[i]);
+	  }%>];
 
   var myLineChart = new Chart(ctx, {
     type: 'line',
