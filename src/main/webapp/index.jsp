@@ -49,22 +49,9 @@
     	  }
     	  out.print("'"+dataDate[i]+"'");
       }%>];
-  var jsdataFCnt1 = [<% for( int i =0; i < 11;i++){
-  	  if( i != 0){
-  		  out.print(",");
-  	  }
-  	  out.print(dataFCnt[i]);
-    }%>];
-  var jsdataFCnt = [];
-  for (var row in jsdataFCnt1) {
-    jsdataFCnt.push(dataFCnt1[row])
-  };
-  var jsdataSCnt = [<% for( int i =0; i < 11;i++){
-  	  if( i != 0){
-  		  out.print(",");
-  	  }
-  	  out.print(dataSCnt[i]);
-    }%>];
+
+  var jsdataFCnt = [35, 34, 37, 35, 34, 35, 34, 25];
+
   var myLineChart = new Chart(ctx, {
     type: 'line',
     data: {
