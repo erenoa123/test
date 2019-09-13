@@ -23,9 +23,6 @@
 				dataDate[j] = rs.getString("date");
 				dataFCnt[j] = rs.getInt("fcnt");
 				dataSCnt[j] = rs.getInt("scnt");
-				out.println(dataDate[j]);
-				out.println(dataFCnt[j]);
-				out.println(dataSCnt[j]);
 				j++;
 			}
 			smt.close();
@@ -57,6 +54,14 @@
 		  out.print((int)dataFCnt[i]);
 	  }%>];
 
+  var jsdataSCnt = [<% for( int i =0; i < 11;i++){
+	  if( i != 0){
+		  out.print(",");
+	  }
+	  out.print((int)dataSCnt[i]);
+  }%>];
+
+
   var myLineChart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -71,7 +76,7 @@
         },
         {
           label: 'スクワット',
-          data: [25, 27, 27, 25, 26, 27, 25, 21],
+          data: jsdataSCnt,
           borderColor: "rgba(0,0,255,1)",
           backgroundColor: "rgba(0,0,0,0)"
         }
